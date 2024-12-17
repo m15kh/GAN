@@ -16,7 +16,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
 class ModelTrainer:
-    def __init__(self, model, criterion, optimizer, log_dir='/home/ubuntu/m15kh/own/book/Gans/checkpoints/runs'):
+    def __init__(self, model, criterion, optimizer, log_dir='/home/ubuntu/m15kh/own/book/Gans/autoencoder/vanilla_autoencoder/checkpoints/runs'):
         self.model = model
         self.criterion = criterion
         self.optimizer = optimizer
@@ -94,7 +94,7 @@ class Report:
             [x[1] for x in self.val_losses if int(x[0]) == epoch])
         print(f'Epoch [{epoch}], Avg Train Loss: {avg_trn_loss}, Avg Val Loss: {avg_val_loss}')
 
-    def plot_epochs(self, log=True, filename='loss_plot.png'):
+    def plot_epochs(self, log=True, filename='img-output/loss_plot.png'):
         trn_x, trn_y = zip(*self.trn_losses)
         val_x, val_y = zip(*self.val_losses)
         plt.plot(trn_x, trn_y, label='Train Loss')
@@ -114,4 +114,4 @@ log = Report(num_epoches)
 
 trainer = ModelTrainer(model, criterion, optimizer)
 trainer.train(trn_dl, val_dl, num_epoches, log)
-trainer.save_model('/home/ubuntu/m15kh/own/book/Gans/checkpoints/model-simple-autoencoder.pth')
+trainer.save_model('/home/ubuntu/m15kh/own/book/Gans/autoencoder/vanilla_autoencoder/checkpoints/model-simple-autoencoder.pth')

@@ -10,7 +10,7 @@ _, val_dl = load_data()
 print(val_dl)
 # Load the model
 model = AutoEncoder(40).to('cuda')
-model.load_state_dict(torch.load('/home/ubuntu/m15kh/own/book/Gans/checkpoints/model-simple-autoencoder.pth'))
+model.load_state_dict(torch.load('/home/ubuntu/m15kh/own/book/Gans/autoencoder/vanilla_autoencoder/checkpoints/model-simple-autoencoder.pth'))
 model.eval()
 
 # Assuming val_ds is the dataset used in the DataLoader
@@ -30,7 +30,7 @@ for i in range(3):
     ax[1].set_title('prediction')
     ax[1].axis('off')
     plt.tight_layout()
-    plt.savefig(f'output_{i}.png')
+    plt.savefig(f'img-output/output_{i}.png')
     plt.close()
 
 print("finish")
