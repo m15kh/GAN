@@ -15,7 +15,8 @@ def load_data():
 
     trn_ds = MNIST('/home/ubuntu/m15kh/own/book/Gans/autoencoder/content/', transform=img_transform, train=True, download=True)
     val_ds = MNIST('/home/ubuntu/m15kh/own/book/Gans/autoencoder/content/', transform=img_transform, train=False, download=True)
-    batch_size = 256
+    
+    batch_size = 128
     trn_dl = DataLoader(trn_ds, batch_size=batch_size, shuffle=True)
     val_dl = DataLoader(val_ds, batch_size=batch_size, shuffle=False)
     return trn_dl, val_dl

@@ -2,3 +2,4 @@ content/
 .conda/
 __pycache__
 test.py
+template/
