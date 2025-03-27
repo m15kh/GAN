@@ -12,7 +12,7 @@ This project implements a simple vanilla autoencoder using PyTorch. The autoenco
 - **`img-output/`**: Directory to save output images during inference.
 
 ## Requirements
-
+ 
 - Python 3.8+
 - PyTorch
 - torchvision
