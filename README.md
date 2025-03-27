@@ -4,7 +4,7 @@ This project implements a simple vanilla autoencoder using PyTorch. The autoenco
 
 ## Project Structure
 
-- **`pipeline.py`**: Contains the training pipeline for the autoencoder.
+- **`pipeline.py`**: Contains the training pipeline for the autoencoder. 
 - **`net.py`**: Defines the architecture of the autoencoder.
 - **`inference.py`**: Performs inference using the trained autoencoder model.
 - **`dataloader.py`**: Handles loading and preprocessing of the MNIST dataset.
